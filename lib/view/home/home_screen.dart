@@ -18,21 +18,23 @@ class HomeScreen extends StatelessWidget {
             ProfileWidget(),
             Expanded(
               flex: 1,
-              child: Container(
-                  width: double.infinity,
-                  color: cblack,
-                  child: Padding(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: defaulPadding / 2),
-                    child: Text(
-                      "Edit Profile",
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(color: cwhite, fontWeight: FontWeight.bold),
-                    ),
-                  )),
+              child: SingleChildScrollView(
+                child: Container(
+                    width: double.infinity,
+                    color: cblack,
+                    child: Padding(
+                      padding:
+                          const EdgeInsets.symmetric(vertical: defaulPadding / 2),
+                      child: Text(
+                        "Edit Profile",
+                        textAlign: TextAlign.center,
+                        style:
+                            TextStyle(color: cwhite, fontWeight: FontWeight.bold),
+                      ),
+                    )),
+              ),
             ),
-            FormWidget(),
+            FormWidget()
           ],
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_practice/constants.dart';
 
@@ -5,12 +6,49 @@ class cWidget {
   static BottomNavigationBarItem bottomNavigationBarItem(
       {required IconData icon, Color? color, String? title}) {
     return BottomNavigationBarItem(
-      icon: Icon(
-        icon,
-        color: color,
-      ),
-      label:title,
-      backgroundColor: cblack
+        icon: Icon(
+          icon,
+          color: color,
+        ),
+        label: title,
+        backgroundColor: cblack);
+  }
+
+  static textFields({
+    required String fieldname,
+  }) {
+    return Row(
+      children: [
+        Expanded(
+          flex: 2,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: defaulPadding),
+            child: Text(
+              "$fieldname :",
+              style: TextStyle(fontWeight: FontWeight.bold, color: cblack),
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 4,
+          child: SizedBox(
+            height: 10,
+            width: double.infinity,
+            child: TextField(
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 1,
+          child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.edit,
+                    color: cblue,
+                  ),
+                ),
+        ),
+      ],
     );
   }
 }

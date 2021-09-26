@@ -55,7 +55,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       InkWell(
                         onTap: () async {
                           final img = await _picker.pickImage(
-                              source: ImageSource.gallery);
+                              source: ImageSource.camera);
                           setState(() {
                             image = File(img!.path);
                           });
@@ -81,7 +81,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                   backgroundColor: cwhite,
                                   child: ClipOval(
                                     child: (image != null)
-                                        ? Image.file(image!)
+                                        ? Image.file(image!, height: 512, width: 512, fit: BoxFit.fill,)
                                         : Image.asset('images/user.png'),
                                   ),
                                 ),

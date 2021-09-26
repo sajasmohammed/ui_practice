@@ -14,9 +14,7 @@ class cWidget {
         backgroundColor: cblack);
   }
 
-  static textFields({
-    required String fieldname,
-  }) {
+  static textFields(BuildContext context, {required String fieldname}) {
     return Row(
       children: [
         Expanded(
@@ -34,19 +32,34 @@ class cWidget {
           child: SizedBox(
             height: 10,
             width: double.infinity,
-            child: TextField(
-            ),
+            child: TextFormField(),
           ),
         ),
         Expanded(
-          flex: 1,
           child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.edit,
-                    color: cblue,
-                  ),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  content: TextField(),
+                  actions: [
+                    TextButton(onPressed: () {
+                      Navigator.pop(context);
+                    }, child: Text("Save")),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text("Cancel"))
+                  ],
                 ),
+              );
+            },
+            icon: Icon(
+              Icons.edit,
+              color: cblue,
+            ),
+          ),
         ),
       ],
     );

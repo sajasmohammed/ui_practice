@@ -11,9 +11,9 @@ class FormWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 12,
+      flex: 20,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: defaulPadding/2),
+        padding: EdgeInsets.symmetric(horizontal: defaulPadding / 2),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -30,14 +30,54 @@ class FormWidget extends StatelessWidget {
               SizedBox(
                 height: defaulPadding / 4,
               ),
-              cWidget.textFields(fieldname: 'Name'),
-              cWidget.textFields(fieldname: 'Email'),
-              cWidget.textFields(fieldname: 'Phone'),
-              cWidget.textFields(fieldname: 'Age'),
-              cWidget.textFields(fieldname: 'Languge'),
-              cWidget.textFields(fieldname: 'Employee'),
-              cWidget.textFields(fieldname: 'Hobbie'),
-              cWidget.textFields(fieldname: 'Interests'),
+              cWidget.textFields(context,fieldname: 'Name', ),
+              cWidget.textFields(context, fieldname: 'Email',),
+              cWidget.textFields(context, fieldname: 'Phone',),
+              cWidget.textFields(context, fieldname: 'Age',),
+              cWidget.textFields(context, fieldname: 'Languge',),
+              Divider(
+                height: defaulPadding / 2,
+                thickness: defaulPadding / 5,
+                color: cblack,
+              ),
+              SizedBox(
+                height: defaulPadding / 2,
+              ),
+              Row(
+                children: [
+                  Checkbox(
+                    value: true,
+                    checkColor: cwhite,
+                    activeColor: cblack,
+                    onChanged: (i) {},
+                  ),
+                  Text("Exercise"),
+                  
+                ],
+              ),
+              Row(
+                children: [
+                  Checkbox(
+                    value: true,
+                    checkColor: cwhite,
+                    activeColor: cblack,
+                    onChanged: (i) {},
+                  ),
+                  Text("Commute"),
+                ],
+              ),
+              Row(
+                children: [
+                  Checkbox(
+                    value: false,
+                    checkColor: cwhite,
+                    activeColor: cblack,
+                    // fillColor: MaterialStateProperty.all(cwhite),
+                    onChanged: (i) {},
+                  ),
+                  Text("Other"),
+                ],
+              ),
             ],
           ),
         ),

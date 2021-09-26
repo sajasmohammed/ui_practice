@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
                     color: cblack,
                     child: Padding(
                       padding:
-                          const EdgeInsets.symmetric(vertical: defaulPadding / 2),
+                          const EdgeInsets.symmetric(vertical: defaulPadding / 4),
                       child: Text(
                         "Edit Profile",
                         textAlign: TextAlign.center,

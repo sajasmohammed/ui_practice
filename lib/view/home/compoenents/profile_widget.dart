@@ -1,9 +1,6 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:ui_practice/controller/controller.dart';
 import 'package:ui_practice/view/phone_screen/photo_screen.dart';
 
 import '../../../constants.dart';
@@ -14,11 +11,8 @@ class ProfileWidget extends StatefulWidget {
 }
 
 class _ProfileWidgetState extends State<ProfileWidget> {
-  final Controller _controller = Get.put(Controller());
-
   File? image;
   final ImagePicker _picker = ImagePicker();
-
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -54,8 +48,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       SizedBox(height: defaulPadding),
                       InkWell(
                         onTap: () async {
-                          final img = await _picker.pickImage(
-                              source: ImageSource.camera);
+                          final img = await _picker.pickImage(source: ImageSource.camera);
                           setState(() {
                             image = File(img!.path);
                           });

@@ -17,7 +17,7 @@ class cWidget {
   static textFields(BuildContext context, {required String fieldname}) {
     return Row(
       children: [
-        Expanded(
+        Flexible(
           flex: 2,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: defaulPadding),
@@ -27,7 +27,7 @@ class cWidget {
             ),
           ),
         ),
-        Expanded(
+        Flexible(
           flex: 4,
           child: SizedBox(
             height: 10,
@@ -35,7 +35,7 @@ class cWidget {
             child: TextFormField(),
           ),
         ),
-        Expanded(
+        Flexible(
           child: IconButton(
             onPressed: () {
               showDialog(
